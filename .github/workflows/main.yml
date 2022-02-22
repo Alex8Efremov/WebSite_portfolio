@@ -24,5 +24,5 @@ jobs:
       # - run: npm run build
       # Deploy
       - run: rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" /
-            --archive --compress --delete -r . --exclude='.*' root@"${{ secrets.MY_HOST_IP }}":/var/www/html/
+            --archive --compress --delete -r . --exclude='.g*' root@"${{ secrets.MY_HOST_IP }}":/var/www/html/
       
