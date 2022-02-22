@@ -24,5 +24,5 @@ jobs:
       # - run: npm run build
       # Deploy
       - run: rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" \
-            --archive --compress --delete . efremov@"${{ secrets.MY_HOST_IP }}":/home/m71516/public_html/blog.maxgraph.ru
+            --archive --compress --delete . efremov@"${{ secrets.MY_HOST_IP }}":/home/efremov/public_html/
       
