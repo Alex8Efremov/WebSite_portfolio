@@ -1,0 +1,19 @@
+name: CI
+
+on:
+
+  push:
+    branches: [ master ]
+
+jobs:
+
+  ci_part:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Git clone my repo
+        uses: actions/checkout@v2
+        
+      - name: print
+        run : echo ls -la
+      
