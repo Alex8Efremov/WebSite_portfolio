@@ -23,5 +23,5 @@ jobs:
       # - run: npm ci
       # - run: npm run build
       # Deploy
-      - run: rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete -r . --exclude='.g*' efremov@"${{ secrets.MY_HOST_IP }}":/home/efremov/public_html
+      - run: rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete -r . --exclude='.g*' efremov@"${{ secrets.MY_HOST_IP }}":/var/www/html
       
