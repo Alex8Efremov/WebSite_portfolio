@@ -18,7 +18,7 @@ jobs:
         run : echo `ls -la`
         
       - name: Create Client Key nad Setup it.
-        run: set -eu && mkdir "$HOME/.ssh" && echo "${{ secrets.MY_HOST_SSH_KEY }}" > "$HOME/.ssh/key" && chmod 400 "$HOME/.ssh/key"
+        run: set -eu && mkdir "$HOME/.ssh" && echo "${{ secrets.MY_HOST_SSH_KEY }}" > "$HOME/.ssh/key" && chmod 600 "$HOME/.ssh/key"
       # Build
       # - run: npm ci
       # - run: npm run build
