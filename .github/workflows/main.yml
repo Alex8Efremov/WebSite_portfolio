@@ -18,10 +18,10 @@ jobs:
         run : echo `ls -la`
         
       - name: Create Client Key nad Setup it
-        run: set -eu && mkdir "$HOME/.ssh" && echo "${{ secrets.MY_HOST_SSH_KEY }}" > "$HOME/.ssh/key" && chmod 600 "$HOME/.ssh/key" && echo "$HOME/.ssh/key"
+        run: set -eu && mkdir "$HOME/.ssh" && echo "${{ secrets.MY_HOST_SSH_KEY }}" > "$HOME/.ssh/key" && chmod 600 "$HOME/.ssh/key"
       # Build
       # - run: npm ci
       # - run: npm run build
       # Deploy
-      - run: rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" . efremov@"${{ secrets.MY_HOST_IP }}":/home/efremov/public_html/
+      - run: ls -la && rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" . efremov@"${{ secrets.MY_HOST_IP }}":/home/efremov/public_html/
       
