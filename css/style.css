@@ -62,10 +62,10 @@ label{
 	display:inline-block;
 	margin-right: 8px;
 }
-i.facebook {
+i.telegram {
 	background-position: 0px 0px;
 }
-i.facebook:hover {
+i.telegram:hover {
 	background-position: 0px -45px;
     transition:0.5s all;
 	-webkit-transition:0.5s all;
@@ -547,7 +547,7 @@ label.span4 {
 		background: url('../images/img-sprite.png') no-repeat 0px 0px;
 		background-size: 300px;
 	}
-	i.facebook:hover {
+	i.telegram:hover {
 		background-position: 0px -35px;
 	}
 	i.zoom {
@@ -906,10 +906,10 @@ label.span4 {
 	.text p {
 		font-size: 1.35em;
 	}
-	i.facebook {
+	i.telegram {
 		background-position: 0px 0px;
 	}
-	i.facebook:hover {
+	i.telegram:hover {
 		background-position: 0px -30px;
 	}
 	i.zoom {
