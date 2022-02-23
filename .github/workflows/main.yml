@@ -13,15 +13,10 @@ jobs:
     steps:
       - name: Git clone my repo
         uses: actions/checkout@v2
-        
-      - name: print
-        run : echo `ls -la`
-        
+               
       - name: Create Client Key nad Setup it
         run: set -eu && mkdir "$HOME/.ssh" && echo "${{ secrets.MY_HOST_SSH_KEY }}" > "$HOME/.ssh/key" && chmod 600 "$HOME/.ssh/key"
-      # Build
-      # - run: npm ci
-      # - run: npm run build
-      # Deploy
-      - run: rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete -r . --exclude='.g*' "${{ secrets.MY_HOST_NAME }}"@"${{ secrets.MY_HOST_IP }}":/var/www/html
+      
+      - name: Deploy
+        run: rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete -r . --exclude='.*' "${{ secrets.MY_HOST_NAME }}"@"${{ secrets.MY_HOST_IP }}":/var/www/html
       
